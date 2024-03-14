@@ -1111,8 +1111,8 @@ PODS:
     - React-jsi (= 0.73.6)
     - React-logger (= 0.73.6)
     - React-perflogger (= 0.73.6)
-  - RNI18n (2.0.15):
-    - React
+  - RNCAsyncStorage (1.22.3):
+    - React-Core
   - RNLocalize (3.0.6):
     - React-Core
   - SocketRocket (0.6.1)
@@ -1191,7 +1191,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - RNI18n (from `../node_modules/react-native-i18n`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNLocalize (from `../node_modules/react-native-localize`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -1307,8 +1307,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
-  RNI18n:
-    :path: "../node_modules/react-native-i18n"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNLocalize:
     :path: "../node_modules/react-native-localize"
   Yoga:
@@ -1374,7 +1374,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 9636eee762c699ca7c85751a359101797e4c8b3b
   React-utils: d16c1d2251c088ad817996621947d0ac8167b46c
   ReactCommon: 2aa35648354bd4c4665b9a5084a7d37097b89c10
-  RNI18n: e2f7e76389fcc6e84f2c8733ea89b92502351fd8
+  RNCAsyncStorage: 10591b9e0a91eaffee14e69b3721009759235125
   RNLocalize: 4222a3756cdbe2dc9a5bdf445765a4d2572107cb
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: d17d2cc8105eed528474683b42e2ea310e1daf61

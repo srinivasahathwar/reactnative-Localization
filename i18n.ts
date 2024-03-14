@@ -1,25 +1,25 @@
-import I18n from 'react-native-i18n';
-import * as RNLocalize from 'react-native-localize';
+import i18n from 'i18next';
+import {initReactI18next} from 'react-i18next';
+import en from './translations/en.json';
+import fr from './translations/fr.json';
+import languageDetector from './languageDetector';
+import Backend from 'i18next-http-backend';
 
-// Define supported languages and translations
-const supportedLanguages = ['en', 'fr']; // List of supported languages
-const translations:any = {
-  en: require('./translations/en.json'),
-  fr: require('./translations/fr.json'),
-};
+i18n
+  .use(languageDetector)
+  .use(Backend)
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    compatibilityJSON: 'v3',
+    resources: {
+      en: {translation: en},
+      fr: {translation: fr},
+    },
+    lng: 'en', // default language
+    fallbackLng: 'en', // fallback language
+    interpolation: {
+      escapeValue: false, // react already safes from xss
+    },
+  });
 
-// Set up fallback language
-I18n.fallbacks = true;
-I18n.defaultLocale = 'en'; // Set English as the fallback language
-
-// Initialize language
-const deviceLanguage = RNLocalize.getLocales()[0].languageCode;
-const selectedLanguage = supportedLanguages.includes(deviceLanguage) ? deviceLanguage : 'en';
-I18n.locale = selectedLanguage;
-
-// Load translations for the selected language
-I18n.translations = {
-  [selectedLanguage]: translations[selectedLanguage],
-};
-
-export default I18n;
+export default i18n;
